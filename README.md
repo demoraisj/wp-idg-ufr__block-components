@@ -1,6 +1,7 @@
 # wp-idg-ufr__block-components
 
-> Componentes utilizados nos blocos do tema WP da Universidade Federal de Rondonópolis
+> Componentes utilizados nos blocos do tema WP da Universidade Federal de Rondonópolis <br />
+> Depende de github.com/juniorjmm/wp-idg-ufr__block_dependencies
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
