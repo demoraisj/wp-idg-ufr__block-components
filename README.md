@@ -2,7 +2,7 @@
 
 > Componentes utilizados nos blocos do tema WP da Universidade Federal de Rondonópolis
 
-[![NPM](https://img.shields.io/npm/v/wp-idg-ufr__block-components.svg)](https://www.npmjs.com/package/wp-idg-ufr__block-components) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Instalação
 
