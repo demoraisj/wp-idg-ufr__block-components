@@ -1030,7 +1030,7 @@ export default function IconPicker({ setter }) {
   return (
     <Fragment>
       <div className='box'>
-        <button className='bigBtn' onClick={methods.popup}>
+        <button className='big-btn' onClick={methods.popup}>
           <i className='fas fa-icons' />
           <span id='pickerText'>ESCOLHER O ÍCONE</span>
         </button>
