@@ -1,7 +1,7 @@
 {
   "name": "wp-idg-ufr__block-components",
   "version": "1.0.0",
-  "description": "Componentes visuais dos componentes (blocos) do tema WP da UFR",
+  "description": "Componentes utilizados nos blocos do tema WP da Universidade Federal de Rondonópolis",
   "author": "juniorjmm",
   "license": "MIT",
   "repository": "juniorjmm/wp-idg-ufr__block-components",
