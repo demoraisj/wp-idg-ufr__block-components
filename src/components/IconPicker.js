@@ -993,7 +993,7 @@ const iconList = [
 ]
 const style = { display: 'none' }
 
-export default function IconPicker(setter) {
+export default function IconPicker({ setter }) {
   const methods = {
     popup() {
       const popup = document.getElementById('iconPicker')

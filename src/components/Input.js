@@ -1,13 +1,6 @@
 import React from 'react'
 
-export default function Input({
-  attr,
-  label,
-  type,
-  value,
-  className,
-  setAttributes: setter
-}) {
+export default function Input({ attr, label, type, value, className, setter }) {
   const methods = {
     onChange(event) {
       const attributes = {}

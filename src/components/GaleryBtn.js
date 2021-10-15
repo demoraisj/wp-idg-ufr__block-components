@@ -1,13 +1,7 @@
 import React from 'react'
 import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor'
 
-export default function GaleryBtn({
-  text,
-  icon,
-  allowedTypes,
-  attr,
-  setter
-}) {
+export default function GaleryBtn({ text, icon, allowedTypes, attr, setter }) {
   const methods = {
     onSelect({ url }) {
       const attributes = {}
