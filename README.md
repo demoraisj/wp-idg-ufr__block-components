@@ -25,13 +25,3 @@ class Example extends Component {
   }
 }
 ```
-
-## Desenvolvimento
-
-```bash
-# Instala dependências e compila ao observar mudanças
-npm i && npm run start
-
-# Instala dependencias e inicia servidor para visualizar componentes
-cd ./example && npm i && npm start
-```
