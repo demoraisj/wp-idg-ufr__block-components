@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import Modal from 'react-modal'
 
 const iconList = [
   'fas fa-address-book',
@@ -992,9 +991,22 @@ const iconList = [
   'fab fa-youtube',
   'fab fa-youtube-square'
 ]
+const style = { display: 'none' }
 
 export default function IconPicker({ setter }) {
   const methods = {
+    popup() {
+      const popup = document.getElementById('iconPicker')
+      const pickerText = document.getElementById('pickerText')
+
+      popup.style.display === 'none'
+        ? (popup.style.display = 'inherit')
+        : (popup.style.display = 'none')
+      popup.style.display === 'none'
+        ? (pickerText.innerText = 'ESCOLHER O ÍCONE')
+        : (pickerText.innerText = 'FECHAR SELEÇÃO')
+    },
+
     renderIconList(list) {
       const fragment = []
 
@@ -1015,19 +1027,17 @@ export default function IconPicker({ setter }) {
     }
   }
 
-  const verdadeiro = true
-
   return (
     <Fragment>
       <div className='box'>
-        <button className='big-btn'>
+        <button className='big-btn' onClick={methods.popup}>
           <i className='fas fa-icons' />
           <span id='pickerText'>ESCOLHER O ÍCONE</span>
         </button>
+      </div>
 
-        <Modal isOpen={verdadeiro}>
-          <h1>Ola</h1>
-        </Modal>
+      <div id='iconPicker' className='popup' style={style}>
+        <div className='row'>{methods.renderIconList(iconList)}</div>
       </div>
     </Fragment>
   )
