@@ -1,8 +1,6 @@
 import React, { Fragment } from 'react'
 import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
 
-const ReactSwal = withReactContent(Swal)
 const iconList = [
   'fas fa-address-book',
   'fas fa-address-card',
@@ -1017,7 +1015,7 @@ export default function IconPicker({ setter }) {
     },
 
     popup() {
-      ReactSwal.fire({
+      Swal.fire({
         title: 'Escolha um ícone',
         showCloseButton: true,
         html: this.renderIconList(iconList)
