@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import Swal from 'sweetalert2'
+import tingle from 'tingle.js'
 
 const iconList = [
   'fas fa-address-book',
@@ -1015,11 +1015,13 @@ export default function IconPicker({ setter }) {
     },
 
     popup() {
-      Swal.fire({
-        title: 'Escolha um ícone',
-        showCloseButton: true,
-        html: this.renderIconList(iconList)
+      // eslint-disable-next-line new-cap
+      const modal = new tingle.modal({
+        closeMethods: ['overlay', 'button', 'escape'],
+        closeLabel: 'Fechar'
       })
+
+      modal.setContent('<h1>Teste</h1>')
     }
   }
 

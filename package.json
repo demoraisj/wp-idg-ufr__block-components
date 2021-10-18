@@ -52,6 +52,6 @@
   ],
   "dependencies": {
     "@wordpress/block-editor": "^7.0.3",
-    "sweetalert2": "^11.1.9"
+    "tingle.js": "^0.16.0"
   }
 }
