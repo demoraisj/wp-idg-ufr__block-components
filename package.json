@@ -2,7 +2,7 @@
   "name": "wp-idg-ufr__block-components",
   "version": "1.0.0",
   "description": "Componentes utilizados nos blocos do tema WP da Universidade Federal de Rondonópolis",
-  "author": "juniorjmm",
+  "author": "UFR",
   "license": "MIT",
   "repository": "juniorjmm/wp-idg-ufr__block-components",
   "main": "dist/index.js",
@@ -52,6 +52,6 @@
   ],
   "dependencies": {
     "@wordpress/block-editor": "^7.0.3",
-    "tingle.js": "^0.16.0"
+    "react-modal": "^3.14.3"
   }
 }

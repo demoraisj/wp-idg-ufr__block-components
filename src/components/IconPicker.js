@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import tingle from 'tingle.js'
+import Modal from 'react-modal'
 
 const iconList = [
   'fas fa-address-book',
@@ -1012,26 +1012,22 @@ export default function IconPicker({ setter }) {
       })
 
       return fragment
-    },
-
-    popup() {
-      // eslint-disable-next-line new-cap
-      const modal = new tingle.modal({
-        closeMethods: ['overlay', 'button', 'escape'],
-        closeLabel: 'Fechar'
-      })
-
-      modal.setContent('<h1>Teste</h1>')
     }
   }
+
+  const verdadeiro = true
 
   return (
     <Fragment>
       <div className='box'>
-        <button className='big-btn' onClick={methods.popup}>
+        <button className='big-btn'>
           <i className='fas fa-icons' />
           <span id='pickerText'>ESCOLHER O ÍCONE</span>
         </button>
+
+        <Modal isOpen={verdadeiro}>
+          <h1>Ola</h1>
+        </Modal>
       </div>
     </Fragment>
   )
