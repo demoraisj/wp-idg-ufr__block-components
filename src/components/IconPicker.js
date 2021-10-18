@@ -1016,7 +1016,7 @@ export default function IconPicker({ setter }) {
         }
 
         fragment.push(
-          <div className='col-2 icon-wrapper text-center'>
+          <div className='col-3 icon-wrapper text-center'>
             {/* eslint-disable-next-line react/jsx-no-bind */}
             <i className={icon} onClick={onClick} role='button' />
           </div>
