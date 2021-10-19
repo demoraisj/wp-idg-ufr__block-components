@@ -1,5 +1,9 @@
 import React, { Fragment } from 'react'
 
+/**
+ * Lista de ícones FontAwesome Free
+ * @type {string[]}
+ */
 const iconList = [
   'fas fa-address-book',
   'fas fa-address-card',
@@ -991,10 +995,23 @@ const iconList = [
   'fab fa-youtube',
   'fab fa-youtube-square'
 ]
+/**
+ * Estilos do seletor de ícones, controla sua visibilidade
+ * @type {{display: string}}
+ */
 const style = { display: 'none' }
 
+/**
+ *
+ * @param setter
+ * @returns {JSX.Element|*[]}
+ * @constructor
+ */
 export default function IconPicker({ setter }) {
   const methods = {
+    /**
+     * Altera a visiilidade do seletor de ícones, e o rótulo do botão do mesmo
+     */
     popup() {
       const popup = document.getElementById('iconPicker')
       const pickerText = document.getElementById('pickerText')
@@ -1007,6 +1024,12 @@ export default function IconPicker({ setter }) {
         : (pickerText.innerText = 'FECHAR SELEÇÃO')
     },
 
+    /**
+     * Renderiza a lista de ícones
+     *
+     * @param list
+     * @returns {*[]}
+     */
     renderIconList(list) {
       const fragment = []
 

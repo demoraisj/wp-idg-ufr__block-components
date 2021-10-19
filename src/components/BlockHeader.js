@@ -1,5 +1,13 @@
 import React from 'react'
 
+/**
+ * Componente React para o cabeçalho dos blocos UFR
+ *
+ * @param title
+ * @param description
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export default function BlockHeader({ title, description }) {
   return (
     <div className='header'>

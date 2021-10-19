@@ -2,6 +2,11 @@ import React from 'react'
 
 export default function Select({ label, attr, options, value, setter }) {
   const methods = {
+    /**
+     * Renderiza as opções do <select> baseado na lista obtida como parâmetro
+     * @param opts
+     * @returns {*[]}
+     */
     renderOptions(opts) {
       const optionsList = []
 
@@ -18,6 +23,10 @@ export default function Select({ label, attr, options, value, setter }) {
       return optionsList
     },
 
+    /**
+     * Executa ao entrar dados no input, e atualiza a propriedade indicada do bloco com estes dados
+     * @param event
+     */
     onChange(event) {
       const attributes = {}
 
