@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function BlockHeader() {
+export default function BlockHeader({ title, description }) {
   return (
     <div className='header'>
       <div
@@ -59,12 +59,10 @@ l-158 -4 0 162 0 162 168 -4 c139 -2 173 -6 205 -22z'
           </g>
         </svg>
 
-        <h1 className='title'>Avatar</h1>
+        <h1 className='title'>{title}</h1>
       </div>
 
-      <span className='description'>
-        Escolha o tipo de avatar, e como ele será apresentado.
-      </span>
+      <span className='description'>{description}</span>
     </div>
   )
 }
