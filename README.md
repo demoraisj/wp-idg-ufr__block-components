@@ -31,7 +31,7 @@ Atributos:
   - title: string // Para exibição no título
   - subtitle: string // Para exibição no subtítulo
 
-### Componente ```<GaleryBtn /> ```
+### Componente ```<UFRGaleryBtn /> ```
 Atributos:
 - text: string // Para exibição no título
 - icon: string // Para exibição no subtítulo
@@ -39,11 +39,11 @@ Atributos:
 - setter: function // Função 'setAttributes' provida nos parâmetros do método 'edit' no ambiente @wodpress/create-block
 - attr: string // Atributo para ser alterado com o setter, listado em block.json na seção 'attributes'
 
-### Componente ```<IconPicker /> ```
+### Componente ```<UFRIconPicker /> ```
 Atributos:
 - setter: function // Função 'setAttributes' provida nos parâmetros do método 'edit' no ambiente @wodpress/create-block
 
-### Componente ```<Input /> ```
+### Componente ```<UFRInput /> ```
 Atributos:
 - label: string // atributo label nativo do input
 - type: string // atributo type nativo do input, defaults to 'text'
@@ -52,7 +52,7 @@ Atributos:
 - setter: function // Função 'setAttributes' provida nos parâmetros do método 'edit' no ambiente @wodpress/create-block
 - attr: string // Atributo para ser alterado com o setter, listado em block.json na seção 'attributes'
 
-### Componente ```<Select /> ```
+### Componente ```<UFRSelect /> ```
 Atributos:
 - label: string // atributo label nativo do input
 - options: { label: string, value: string | boolean | number }[] // Array de opções para o select
@@ -60,7 +60,7 @@ Atributos:
 - setter: function // Função 'setAttributes' provida nos parâmetros do método 'edit' no ambiente @wodpress/create-block
 - attr: string // Atributo para ser alterado com o setter, listado em block.json na seção 'attributes'
 
-### Componente ```<Checkbox /> ```
+### Componente ```<UFRCheckbox /> ```
 Atributos:
 - label: string // Atributo label nativo do input
 - checked: boolean // Se o checkbox deve estar por padrão marcado. Deve acompanhar o default do atributo em block.json
