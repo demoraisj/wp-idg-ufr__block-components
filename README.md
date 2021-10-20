@@ -51,11 +51,20 @@ Atributos:
 - className: string // attributo className nativo do React
 - setter: function // Função 'setAttributes' provida nos parâmetros do método 'edit' no ambiente @wodpress/create-block
 - attr: string // Atributo para ser alterado com o setter, listado em block.json na seção 'attributes'
--
+
 ### Componente ```<Select /> ```
 Atributos:
 - label: string // atributo label nativo do input
 - options: { label: string, value: string | boolean | number }[] // Array de opções para o select
 - value: string | boolean | number // atributo value nativo do input
+- setter: function // Função 'setAttributes' provida nos parâmetros do método 'edit' no ambiente @wodpress/create-block
+- attr: string // Atributo para ser alterado com o setter, listado em block.json na seção 'attributes'
+
+### Componente ```<Checkbox /> ```
+Atributos:
+- label: string // Atributo label nativo do input
+- checked: boolean // Se o checkbox deve estar por padrão marcado. Deve acompanhar o default do atributo em block.json
+- valWhenChecked: any // Valor para ser atribuído ao atributo alvo quando o checkbox for marcado
+- valWhenUnchecked: any // Valor para ser atribuído ao atributo alvo quando o checkbox for desmarcado
 - setter: function // Função 'setAttributes' provida nos parâmetros do método 'edit' no ambiente @wodpress/create-block
 - attr: string // Atributo para ser alterado com o setter, listado em block.json na seção 'attributes'
