@@ -15,7 +15,7 @@ export default function Select({ label, attr, options, value, setter }) {
 
         optionsList.push(
           <option value={opt.value} selected={selected}>
-            {opt.icon ? <i className={opt.icon} /> : ''}
+            {opt.icon ? `${opt.icon} ` : ''}
             {opt.label}
           </option>
         )
