@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 
 /**
  *
@@ -8,7 +8,7 @@ import React, { Fragment } from 'react'
  * @param {function} useState
  * @return {JSX.Element|*} Gerador de Lista
  */
-export default function ListBuilder({ items, setter, attr, useState }) {
+export default function ListBuilder({ items, setter, attr }) {
   const model = Object.freeze({ text: '', link: '' })
   const [error, setError] = useState(false)
   const [crudStatus, setCrudStatus] = useState('creating')
