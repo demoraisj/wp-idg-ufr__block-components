@@ -295,7 +295,7 @@ export default function ListBuilder({ items, setter, attr }) {
             </div>
           </div>
           <div className='col-2'>
-            <button onClick={crud.save}>
+            <button onClick={crud.save} onKeyPress={(e) => e.keyCode === 13 ? crud.save() : null}>
               {crudStatus.startsWith('creating') ? '+' : '✓'}
             </button>
           </div>
