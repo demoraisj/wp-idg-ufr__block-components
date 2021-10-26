@@ -88,14 +88,16 @@ export default function ListBuilder({ items, setter, attr }) {
      */
     remove(item, nested = null) {
       const attributes = {}
-      let index = itemsList.findIndex((i) => i === item)
+      const itemIndex = itemsList.findIndex((i) => i === item)
 
       if (nested) {
-        index = itemsList[index].children.findIndex((i) => i === item)
+        const childIndex = itemsList[itemIndex].children.findIndex(
+          (i) => i === item
+        )
 
-        itemsList[index].children.splice(index, 1)
+        itemsList[itemIndex].children.splice(childIndex, 1)
       } else {
-        itemsList.splice(index, 1)
+        itemsList.splice(itemIndex, 1)
       }
 
       setCrudStatus('creating')
