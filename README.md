@@ -71,5 +71,6 @@ Atributos:
 ### Componente ```<UFRListBuilder /> ```
 Atributos:
 - items: string // JSON encoded type { text: string, link: string, isChild: false, children: { text: string, link: string, isChild: true }[] }[]
+- useState: function // Função do state de componente React, importada de "@wordpress/element"
 - setter: function // Função 'setAttributes' provida nos parâmetros do método 'edit' no ambiente @wodpress/create-block
 - attr: string // Atributo para ser alterado com o setter, listado em block.json na seção 'attributes'
