@@ -1,4 +1,7 @@
 import React, { Fragment } from 'react'
+import FontIconPicker from '@fonticonpicker/react-fonticonpicker'
+import '@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.base-theme.react.css'
+import '@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.material-theme.react.css'
 
 /**
  * Lista de ícones FontAwesome Free
@@ -995,11 +998,6 @@ const iconList = [
   'fab fa-youtube',
   'fab fa-youtube-square'
 ]
-/**
- * Estilos do seletor de ícones, controla sua visibilidade
- * @type {{display: string}}
- */
-const style = { display: 'none' }
 
 /**
  *
@@ -1007,69 +1005,36 @@ const style = { display: 'none' }
  * @returns {JSX.Element|*[]}
  * @constructor
  */
-export default function IconPicker({ setter, attr }) {
+export default function IconPicker({ setter, attr, value }) {
   const methods = {
-    /**
-     * Altera a visiilidade do seletor de ícones, e o rótulo do botão do mesmo
-     */
-    popup() {
-      const popup = document.getElementById('iconPicker')
-      const pickerText = document.getElementById('pickerText')
+    onChange(v) {
+      if (attr) {
+        const attribute = {}
+        attribute[attr] = v
 
-      popup.style.display === 'none'
-        ? (popup.style.display = 'inherit')
-        : (popup.style.display = 'none')
-      popup.style.display === 'none'
-        ? (pickerText.innerText = 'ESCOLHER O ÍCONE')
-        : (pickerText.innerText = 'FECHAR SELEÇÃO')
-    },
+        setter(attribute)
+        return
+      }
 
-    /**
-     * Renderiza a lista de ícones
-     *
-     * @param list
-     * @returns {*[]}
-     */
-    renderIconList(list) {
-      const fragment = []
-
-      list.forEach((icon) => {
-        function onClick() {
-          if (attr) {
-            const attribute = {}
-            attribute[attr] = icon
-
-            setter(attribute)
-            return
-          }
-
-          setter({ icon })
-        }
-
-        fragment.push(
-          <div className='col-3 icon-wrapper text-center'>
-            {/* eslint-disable-next-line react/jsx-no-bind */}
-            <i className={icon} onClick={onClick} role='button' />
-          </div>
-        )
-      })
-
-      return fragment
+      setter({ icon: v })
     }
   }
 
   return (
     <Fragment>
-      <div className='box'>
-        <button className='big-btn' onClick={methods.popup}>
-          <i className='fas fa-icons' />
-          <span id='pickerText'>ESCOLHER O ÍCONE</span>
-        </button>
-      </div>
-
-      <div id='iconPicker' className='popup' style={style}>
-        <div className='row'>{methods.renderIconList(iconList)}</div>
-      </div>
+      <label>Icone</label> <br />
+      <FontIconPicker
+        icons={iconList}
+        theme='blue'
+        renderUsing='class'
+        value={value}
+        onChange={methods.onChange}
+        allCatPlaceholder='Mostrar todos'
+        searchPlaceholder='Pesquisar (Em inglês)'
+        noIconPlaceholder='Não encontrado'
+        noSelectedPlaceholder='Selecione um ícone'
+        closeOnSelect
+      />
     </Fragment>
   )
 }
