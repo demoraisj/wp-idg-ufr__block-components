@@ -11,6 +11,9 @@ export default function Textarea({ attr, label, value, className, setter }) {
 
       attributes[attr] = event.target.value
       setter(attributes)
+
+      event.target.style.height = 'auto'
+      event.target.style.height = event.target.scrollHeight + 'px'
     }
   }
 
