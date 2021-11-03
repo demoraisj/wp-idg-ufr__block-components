@@ -1007,7 +1007,7 @@ const style = { display: 'none' }
  * @returns {JSX.Element|*[]}
  * @constructor
  */
-export default function IconPicker({ setter }) {
+export default function IconPicker({ setter, attr }) {
   const methods = {
     /**
      * Altera a visiilidade do seletor de ícones, e o rótulo do botão do mesmo
@@ -1035,6 +1035,14 @@ export default function IconPicker({ setter }) {
 
       list.forEach((icon) => {
         function onClick() {
+          if (attr) {
+            const attribute = {}
+            attribute[attr] = icon
+
+            setter(attribute)
+            return
+          }
+
           setter({ icon })
         }
 
