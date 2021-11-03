@@ -52,6 +52,14 @@ Atributos:
 - setter: function // Função 'setAttributes' provida nos parâmetros do método 'edit' no ambiente @wodpress/create-block
 - attr: string // Atributo para ser alterado com o setter, listado em block.json na seção 'attributes'
 
+### Componente ```<UFRTextarea /> ```
+Atributos:
+- label: string // atributo label nativo do textarea
+- value: string // conteúdo innerText do textarea
+- className: string // attributo className nativo do React
+- setter: function // Função 'setAttributes' provida nos parâmetros do método 'edit' no ambiente @wodpress/create-block
+- attr: string // Atributo para ser alterado com o setter, listado em block.json na seção 'attributes'
+
 ### Componente ```<UFRSelect /> ```
 Atributos:
 - options: { label: string, value: string | boolean | number }[] // Array de opções para o select
