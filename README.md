@@ -33,12 +33,62 @@ Atributos:
 
 ### Componente ```<UFRGaleryBtn /> ```
 Atributos:
-- text: string // Texto para exibição no título do botão
-- icon: string // Classe de icone font-awesome para o botão
-- allowedTypes: string[] // Tipos permitidos para upload
-- filesList: File[] // Arquivos selecionados
+- selection: number[] // Necessário para lembrar a seleção de mídia. Deve ser passado o valor de um atributo de mesmo nome 'selection', listado em block.json na seção 'attributes'.
+- text: string // Texto para exibição no título do botão, opcional
+- icon: string // Classe de icone font-awesome para o botão, opcional
+- allowedTypes: string[] // Tipos permitidos para upload, opcional
+- multiple: boolean // Se o upload deve ser multiplo
 - setter: function // Função 'setAttributes' provida nos parâmetros do método 'edit' no ambiente @wodpress/create-block
-- attr: string // Atributo para ser alterado com o setter, listado em block.json na seção 'attributes'
+- attrs: Record<string, string> // Objeto onde as chaves (keys) indicam o attr para ser alterado com o setter, listado em block.json na seção 'attributes', e os valores indicam qual a informação desejada da mídia escolhida
+
+##### Sobre os atributos e seleção
+Exemplo de uso:
+```jsx
+<UFRGaleryBtn multiple selection={selection} setter={setAttributes} attrs={{ linkDaImagem: 'url', tituloDaImagem: 'title' }} />
+```
+O componente irá procurar pelos atributos 'url' e 'title' da midia selecionada e salvar, usando o setter,
+nos atributos 'linkDaImagem' e 'tituloDaImagem', estes devem estar listados em block.json na seção 'attributes'.
+
+O attributo 'selection' deve constar em block.json e ser do tipo array.
+Se não houver valor no atributo 'attrs', o componente tentará salvar no atributo 'img' o valor do link selecionado.
+
+Se 'multiple' for true, os atributos em block.json para salvar os valores devem ser do tipo array.
+
+Lista de atributos de mídia disponíveis para obtenção:
+
+|---|
+|---|
+|alt|
+|author|
+|authorLink|
+|authorName|
+|caption|
+|date|
+|dateFormatted|
+|description|
+|editLink|
+|filename|
+|filesizeHumanReadable|
+|filesizeInBytes|
+|height|
+|icon|
+|id|
+|link|
+|meta|
+|mime|
+|modified|
+|name|
+|orientation|
+|sizes|
+|status|
+|subtype|
+|title|
+|type|
+|uploadedTo|
+|uploadedToLink|
+|uploadedToTitle|
+|url|
+|width|
 
 ### Componente ```<UFRIconPicker /> ```
 Atributos:
