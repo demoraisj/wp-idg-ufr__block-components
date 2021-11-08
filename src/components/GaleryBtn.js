@@ -17,13 +17,11 @@ export default function GaleryBtn({
   text,
   icon,
   allowedTypes,
-  setter,
   multiple,
-  selection = [],
-  attrs = { img: 'url' }
+  value,
+  setter,
+  attr
 }) {
-  const setSelectedIds = (ids) => setter({ selection: ids })
-
   const methods = {
     /**
      * Executa quando selecionado um item da galeria e atualiza o valor do atributo do bloco
@@ -31,27 +29,8 @@ export default function GaleryBtn({
      */
     onSelect(selected) {
       const attributes = {}
-      const requiredAttrs = Object.entries(attrs)
 
-      requiredAttrs.forEach(([key, value]) => {
-        if (Array.isArray(selected)) {
-          const values = []
-          const ids = []
-
-          selected.forEach((item) => {
-            ids.push(item.id)
-            values.push(item[value])
-          })
-
-          setSelectedIds(ids)
-          attributes[key] = values
-          return
-        }
-
-        setSelectedIds([selected.id])
-        attributes[key] = selected[value]
-      })
-
+      attributes[attr] = selected
       setter(attributes)
     }
   }
@@ -61,7 +40,11 @@ export default function GaleryBtn({
       <MediaUpload
         onSelect={methods.onSelect}
         allowedTypes={allowedTypes}
-        value={selection}
+        value={
+          !multiple
+            ? value.id
+            : value.reduce((acc, curr) => [curr.id, ...acc], [])
+        }
         multiple={multiple}
         render={({ open }) => (
           <button id='galeryBtn' className='big-btn' onClick={open}>
