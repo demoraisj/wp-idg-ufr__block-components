@@ -13,7 +13,14 @@ import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor'
  * @returns {JSX.Element}
  * @constructor
  */
-export default function GaleryBtn({ text, icon, allowedTypes, attr, setter }) {
+export default function GaleryBtn({
+  text,
+  icon,
+  allowedTypes,
+  attr,
+  setter,
+  fileList
+}) {
   const methods = {
     /**
      * Executa quando selecionado um item da galeria e atualiza o valor do atributo do bloco
@@ -30,12 +37,13 @@ export default function GaleryBtn({ text, icon, allowedTypes, attr, setter }) {
   return (
     <MediaUploadCheck>
       <MediaUpload
+        filesList={fileList}
         onSelect={methods.onSelect}
         allowedTypes={allowedTypes}
         render={({ open }) => (
           <button id='galeryBtn' className='big-btn' onClick={open}>
-            <i className={icon} />
-            {text}
+            <i className={icon ?? 'fas fa-photo-video'} />
+            {text ?? 'Selecione a mídia'}
           </button>
         )}
       />

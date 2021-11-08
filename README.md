@@ -33,8 +33,8 @@ Atributos:
 
 ### Componente ```<UFRGaleryBtn /> ```
 Atributos:
-- text: string // Para exibição no título
-- icon: string // Para exibição no subtítulo
+- text: string // Texto para exibição no título do botão
+- icon: string // Classe de icone font-awesome para o botão
 - allowedTypes: string[] // Tipos permitidos para upload
 - setter: function // Função 'setAttributes' provida nos parâmetros do método 'edit' no ambiente @wodpress/create-block
 - attr: string // Atributo para ser alterado com o setter, listado em block.json na seção 'attributes'
