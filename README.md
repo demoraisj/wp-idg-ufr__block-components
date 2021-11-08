@@ -8,7 +8,7 @@
 ## Instalação
 
 ```bash
-npm install https://github.com/juniorjmm/wp-idg-ufr__block-components.git
+npm install https://github.com/juniorjmm/wp-idg-ufr__block-components.git#<version>
 ```
 
 ## Uso
